@@ -1,0 +1,5193 @@
+<!DOCTYPE html>
+
+<html
+    lang="ar"
+    dir="rtl"
+>
+
+<head>
+    <link rel="stylesheet" href="media/fonts/tajawal.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AYLOL BEAUTY - صالون أيلول للتزيين النسائي. خدمات الميكب والشعر والأظافر والرموش والعناية."
+    >
+
+    <title>
+        AYLOL BEAUTY | صالون أيلول للتزيين النسائي
+    </title>
+
+    <style>
+
+        :root {
+            --burgundy: #6f2137;
+            --burgundy-dark: #4b1425;
+            --green: #7c836a;
+            --green-dark: #59604d;
+            --gold: #b38a3a;
+            --gold-light: #d8bd7a;
+            --cream: #f8f3ea;
+            --beige: #efe6d8;
+            --white: #ffffff;
+            --text: #352d29;
+            --muted: #786f68;
+            --border: rgba(179, 138, 58, 0.22);
+            --shadow: 0 18px 55px rgba(64, 42, 35, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--header-height, 86px) + 16px);
+        }
+
+        body {
+            margin: 0;
+            background: var(--cream);
+            color: var(--text);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1180px, calc(100% - 32px));
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-soft {
+            background: var(--beige);
+        }
+
+        .section-green {
+            background: var(--green-dark);
+            color: #fff;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-heading {
+            max-width: 680px;
+            margin-bottom: 50px;
+        }
+
+        .section-heading.center {
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+        }
+
+        .section-heading.center .eyebrow::before {
+            display: none;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            color: var(--burgundy-dark);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-size: clamp(34px, 5vw, 58px);
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        .section-heading h2 span {
+            color: var(--gold);
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 2;
+            font-size: 15px;
+            margin: 18px 0 0;
+        }
+
+        .btn {
+            min-height: 52px;
+            padding: 0 27px;
+            border-radius: 999px;
+            border: 0;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--burgundy);
+            color: #fff;
+            box-shadow: 0 12px 25px rgba(111, 33, 55, 0.17);
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold);
+            background: transparent;
+            color: var(--burgundy-dark);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 85px);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(216, 189, 122, 0.22),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fbf7f0 0%,
+                    #f1e8da 100%
+                );
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border: 1px solid rgba(179, 138, 58, 0.16);
+            border-radius: 50%;
+            left: -150px;
+            top: -120px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.92fr;
+            gap: 70px;
+            align-items: center;
+            padding: 65px 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            font-family: Tahoma, Arial, sans-serif;
+        }
+
+        .hero-mini {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            color: var(--green-dark);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .hero-mini span {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--burgundy-dark);
+            font-size: clamp(54px, 8vw, 96px);
+            font-weight: 500;
+            line-height: 0.95;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 em {
+            color: var(--gold);
+            font-style: normal;
+            display: block;
+        }
+
+        .hero-arabic-title {
+            margin: 25px 0 12px;
+            color: var(--burgundy);
+            font-size: clamp(25px, 4vw, 39px);
+            line-height: 1.5;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            color: var(--text);
+            max-width: 560px;
+            font-size: clamp(16px, 1.5vw, 18px);
+            line-height: 2;
+            margin: 0 0 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 620px;
+        }
+
+        .hero-image-main {
+            width: 82%;
+            height: 570px;
+            margin-right: auto;
+            border-radius: 190px 190px 25px 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 7px solid rgba(255, 255, 255, 0.6);
+        }
+
+        .hero-image-main img,
+        .hero-image-main video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-visual.video-ready {
+            min-height: 0;
+        }
+
+        .hero-visual.video-ready .hero-image-main {
+            position: relative;
+            width: min(100%, 360px);
+            height: auto;
+            aspect-ratio: 464 / 832;
+            margin-inline: auto;
+            border-radius: 28px;
+            border: 5px solid var(--beige);
+            background: var(--burgundy-dark);
+            box-shadow: 0 0 0 1px var(--gold-light), 0 20px 48px rgba(75, 20, 37, .16);
+        }
+
+        .hero-visual.video-ready video {
+            display: block;
+            position: absolute;
+            inset: 0;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .hero-visual.video-ready .hero-badge {
+            position: static;
+            width: fit-content;
+            height: auto;
+            margin: 18px auto 0;
+            padding: 10px 24px;
+            border: 1px solid var(--gold-light);
+            border-radius: 18px;
+            flex-direction: row;
+            gap: 12px;
+        }
+
+        .hero-image-main [hidden] {
+            display: none;
+        }
+
+        .hero-badge {
+            position: absolute;
+            right: -20px;
+            bottom: 50px;
+            width: 175px;
+            height: 175px;
+            border-radius: 50%;
+            background: var(--burgundy);
+            border: 6px solid var(--cream);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 18px 40px rgba(75, 20, 37, 0.22);
+        }
+
+        .hero-badge strong {
+            color: var(--gold-light);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .hero-badge span {
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 75px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 560px;
+            object-fit: cover;
+            border-radius: 24px 150px 24px 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image::after {
+            content: "";
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border: 1px solid var(--gold);
+            left: -20px;
+            bottom: -20px;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .about-content h2 {
+            margin: 0;
+            color: var(--burgundy-dark);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-size: clamp(36px, 5vw, 55px);
+            font-weight: 500;
+        }
+
+        .about-content h3 {
+            margin: 8px 0 20px;
+            color: var(--gold);
+            font-size: 24px;
+        }
+
+        .about-content p {
+            color: var(--muted);
+            line-height: 2.1;
+            margin: 0 0 30px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 13px;
+        }
+
+        .about-feature {
+            padding: 18px;
+            border-radius: 16px;
+            background: #fff;
+            border: 1px solid var(--border);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--green-dark);
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            position: relative;
+            min-height: 370px;
+            overflow: hidden;
+            border-radius: 26px;
+            background: #fff;
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 45px rgba(66, 43, 34, 0.05);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .service-photo {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .service-body {
+            padding: 24px;
+        }
+
+        .service-number {
+            color: var(--gold);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .service-body h3 {
+            color: var(--burgundy-dark);
+            font-size: 21px;
+            margin: 7px 0;
+        }
+
+        .service-body p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .booking-available {
+            margin-top: 14px;
+            display: inline-flex;
+            padding: 7px 12px;
+            background: rgba(111, 33, 55, 0.09);
+            color: var(--burgundy);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* ================= FEATURED ================= */
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .featured-card {
+            position: relative;
+            min-height: 500px;
+            border-radius: 28px;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .featured-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(49, 18, 28, 0.9),
+                    rgba(49, 18, 28, 0.05) 70%
+                );
+        }
+
+        .featured-content {
+            position: absolute;
+            z-index: 2;
+            bottom: 35px;
+            right: 35px;
+            left: 35px;
+        }
+
+        .featured-content h3 {
+            margin: 0 0 8px;
+            color: var(--gold-light);
+            font-size: 30px;
+        }
+
+        .featured-content p {
+            line-height: 1.9;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0 0 20px;
+        }
+
+        .featured-content .btn {
+            background: #fff;
+            color: var(--burgundy);
+        }
+
+        /* ================= PRICES ================= */
+
+        .price-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 9px;
+            margin-bottom: 35px;
+        }
+
+        .price-filter {
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 11px 18px;
+            background: #fff;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .price-filter.active,
+        .price-filter:hover {
+            background: var(--burgundy);
+            border-color: var(--burgundy);
+            color: #fff;
+        }
+
+        .price-search-wrap {
+            max-width: 520px;
+            margin: 0 auto 40px;
+        }
+
+        .price-search-wrap input {
+            width: 100%;
+            min-height: 52px;
+            border: 1px solid var(--border);
+            background: #fff;
+            border-radius: 999px;
+            padding: 0 22px;
+            outline: none;
+            color: var(--text);
+        }
+
+        .price-search-wrap input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(179, 138, 58, 0.09);
+        }
+
+        .prices-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.77);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(66, 43, 34, 0.04);
+        }
+
+        .price-card.hidden {
+            display: none;
+        }
+
+        #header-placeholder {
+            height: var(--header-height, 86px);
+        }
+
+        .price-card-header {
+            min-height: 92px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            cursor: pointer;
+            list-style: none;
+            padding: 20px 23px;
+            background: linear-gradient(
+                135deg,
+                var(--gold),
+                #c8a158
+            );
+            color: #fff;
+        }
+
+        .price-card-header::-webkit-details-marker {
+            display: none;
+        }
+
+        .price-card-header:focus-visible {
+            outline: 3px solid var(--burgundy);
+            outline-offset: -5px;
+        }
+
+        .price-card-header:hover {
+            background: var(--gold);
+        }
+
+        .price-toggle {
+            width: 10px;
+            height: 10px;
+            flex-shrink: 0;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+        }
+
+        .price-card[open] .price-toggle {
+            transform: rotate(225deg);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .price-toggle { transition: none; }
+        }
+
+        .price-card-header h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .price-list {
+            padding: 10px 20px 18px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 14px 3px;
+            border-bottom: 1px solid rgba(179, 138, 58, 0.13);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .price-item:last-child {
+            border-bottom: 0;
+        }
+
+        .price-name {
+            flex: 1;
+        }
+
+        .price-value {
+            min-width: max-content;
+            color: var(--burgundy);
+            font-weight: 700;
+        }
+
+        .price-bookable {
+            display: inline-block;
+            color: var(--green-dark);
+            background: rgba(124, 131, 106, 0.11);
+            padding: 3px 7px;
+            border-radius: 999px;
+            font-size: 9px;
+            margin-right: 5px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-filter {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+
+        .gallery-filter.active {
+            background: var(--gold);
+            border-color: var(--gold);
+            color: var(--burgundy-dark);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .gallery-item {
+            height: 370px;
+            border-radius: 22px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s ease;
+        }
+
+        .gallery-item::after {
+            content: "عرض الصورة";
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(75, 20, 37, 0.55);
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        /* ================= OFFERS ================= */
+
+        .offer-card {
+            position: relative;
+            background: var(--burgundy);
+            border-radius: 30px;
+            overflow: hidden;
+            min-height: 380px;
+            padding: 55px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        .offer-card::after {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            border: 1px solid rgba(216, 189, 122, 0.3);
+            left: -100px;
+            top: -150px;
+        }
+
+        .offer-content {
+            position: relative;
+            z-index: 2;
+            max-width: 630px;
+        }
+
+        .offer-content small {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .offer-content h2 {
+            font-size: clamp(34px, 5vw, 56px);
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-weight: 500;
+            margin: 12px 0;
+        }
+
+        .offer-content p {
+            line-height: 2;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        /* ================= WHY ================= */
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .why-card {
+            text-align: center;
+            padding: 40px 22px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: #fff;
+        }
+
+        .why-icon {
+            width: 62px;
+            height: 62px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: var(--beige);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .why-card h3 {
+            color: var(--burgundy-dark);
+            margin: 0 0 9px;
+            font-size: 16px;
+        }
+
+        .why-card p {
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.9;
+            margin: 0;
+        }
+
+        /* ================= BOOKING ================= */
+
+        .booking-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 40px;
+            align-items: stretch;
+        }
+
+        .booking-intro {
+            background:
+                linear-gradient(
+                    160deg,
+                    var(--green-dark),
+                    var(--green)
+                );
+            color: #fff;
+            padding: 50px;
+            border-radius: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-intro::after {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border: 1px solid rgba(216, 189, 122, 0.3);
+            border-radius: 50%;
+            left: -100px;
+            bottom: -100px;
+        }
+
+        .booking-intro small {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .booking-intro h2 {
+            font-family: "Tajawal", Tahoma, Arial, sans-serif;
+            font-size: 46px;
+            font-weight: 500;
+            margin: 14px 0;
+        }
+
+        .booking-intro p {
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 2;
+        }
+
+        .booking-note {
+            margin-top: 30px;
+            padding: 18px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(255, 255, 255, 0.07);
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .booking-form-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 38px;
+            box-shadow: var(--shadow);
+        }
+
+        .booking-type-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .booking-type {
+            border: 1px solid var(--border);
+            background: var(--cream);
+            border-radius: 18px;
+            min-height: 90px;
+            cursor: pointer;
+            padding: 16px;
+            text-align: center;
+            transition: 0.25s ease;
+        }
+
+        .booking-type strong {
+            display: block;
+            color: var(--burgundy-dark);
+            margin-bottom: 4px;
+        }
+
+        .booking-type span {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .booking-type.active {
+            background: var(--burgundy);
+            border-color: var(--burgundy);
+        }
+
+        .booking-type.active strong,
+        .booking-type.active span {
+            color: #fff;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 17px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid rgba(179, 138, 58, 0.27);
+            background: var(--cream);
+            color: var(--text);
+            border-radius: 13px;
+            padding: 0 15px;
+            min-height: 48px;
+            outline: none;
+        }
+
+        .form-group textarea {
+            min-height: 110px;
+            padding-top: 14px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 4px rgba(179, 138, 58, 0.08);
+        }
+
+        .booking-error {
+            display: none;
+            margin-bottom: 17px;
+            padding: 13px 15px;
+            background: #fff0f3;
+            border: 1px solid #e7bec8;
+            color: #8d2945;
+            border-radius: 12px;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .booking-error.show {
+            display: block;
+        }
+
+        .booking-submit {
+            margin-top: 22px;
+            width: 100%;
+        }
+
+        .booking-terms {
+            font-size: 10px;
+            color: var(--muted);
+            line-height: 1.9;
+            margin-top: 12px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .contact-card {
+            text-align: center;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 30px;
+        }
+
+        .contact-card small {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-actions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .contact-actions .contact-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            min-height: 40px;
+            padding: 0 15px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--cream);
+            color: var(--burgundy);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            transition: background .2s ease, border-color .2s ease;
+        }
+
+        .contact-actions .contact-action-whatsapp {
+            background: var(--green-dark);
+            border-color: var(--green-dark);
+            color: #fff;
+        }
+
+        .contact-actions .contact-action:hover { border-color: var(--gold); background: var(--beige); }
+        .contact-actions .contact-action-whatsapp:hover { background: var(--burgundy); border-color: var(--burgundy); }
+        .contact-actions .contact-action:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+        .contact-action svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        .contact-card h3 {
+            color: var(--burgundy-dark);
+            margin: 0 0 9px;
+        }
+
+        .contact-card p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .back-to-home {
+            position: fixed;
+            right: max(20px, env(safe-area-inset-right));
+            bottom: max(24px, env(safe-area-inset-bottom));
+            z-index: 900;
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--burgundy);
+            color: var(--gold-light);
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 8px 24px rgba(75, 20, 37, .18);
+            text-decoration: none;
+        }
+        .back-to-home:hover { background: var(--burgundy-dark); }
+        .back-to-home:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+        .floating-whatsapp {
+            position: fixed;
+            left: 22px;
+            bottom: 22px;
+            z-index: 900;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #536349;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            transition: transform 0.25s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ================= MODAL ================= */
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(33, 22, 24, 0.78);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.open {
+            display: flex;
+        }
+
+        .modal-card {
+            width: min(550px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--cream);
+            border-radius: 26px;
+            padding: 32px;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            left: 18px;
+            top: 18px;
+            width: 40px;
+            height: 40px;
+            border: 0;
+            border-radius: 50%;
+            cursor: pointer;
+            background: var(--beige);
+            color: var(--burgundy);
+            font-size: 22px;
+        }
+
+        .modal-card h3 {
+            margin: 0 0 22px;
+            color: var(--burgundy-dark);
+            font-size: 25px;
+        }
+
+        .booking-summary {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 17px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            border-bottom: 1px solid var(--border);
+            padding: 11px 0;
+            font-size: 13px;
+        }
+
+        .summary-row:last-child {
+            border-bottom: 0;
+        }
+
+        .summary-row span:first-child {
+            color: var(--muted);
+        }
+
+        .summary-row span:last-child {
+            color: var(--burgundy-dark);
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .lightbox-card {
+            width: min(900px, 100%);
+            position: relative;
+        }
+
+        .lightbox-card img {
+            width: 100%;
+            max-height: 84vh;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        /* ================= REVEAL ================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 0.75s ease,
+                transform 0.75s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 980px) {
+
+            .hero-grid,
+            .about-grid,
+            .booking-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-mini,
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-description {
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .hero-visual {
+                min-height: auto;
+                max-width: 650px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .hero-image-main {
+                width: 85%;
+            }
+
+            .services-grid,
+            .prices-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .featured-grid,
+            .gallery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card {
+                min-height: 440px;
+            }
+
+            .gallery-item {
+                height: 420px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .booking-intro,
+            .booking-form-card {
+                padding: 28px;
+            }
+
+            .offer-card {
+                padding: 35px 25px;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .container {
+                width: min(100% - 22px, 1180px);
+            }
+
+            .services-grid,
+            .prices-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                padding-top: 40px;
+                gap: 40px;
+            }
+
+            .hero-image-main {
+                width: 92%;
+                height: 450px;
+            }
+
+            .hero-badge {
+                width: 135px;
+                height: 135px;
+                right: 0;
+                bottom: 25px;
+            }
+
+            .hero-badge strong {
+                font-size: 17px;
+            }
+
+            .about-image img {
+                height: 420px;
+                border-radius: 20px 100px 20px 20px;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-type-options {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-whatsapp {
+                width: 55px;
+                height: 55px;
+                left: 14px;
+                bottom: 14px;
+            }
+        }
+
+
+        /* Client reviews */
+        .reviews-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            max-width: 680px;
+            margin: auto;
+            text-align: center;
+            gap: 28px;
+            align-items: start;
+        }
+        .reviews-cards {
+            display: grid;
+            gap: 12px;
+            width: 100%;
+            max-width: 440px;
+            margin-inline: auto;
+        }
+        .review-card, .review-form {
+            padding: clamp(22px, 4vw, 34px);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            min-width: 0;
+        }
+        .review-card { padding: 16px 20px; border-radius: 18px; }
+        .review-stars { color: var(--gold); font-size: 20px; letter-spacing: 3px; }
+        .review-card blockquote {
+            margin: 10px 0;
+            font-size: 14px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
+        }
+        .review-author { color: var(--burgundy); font-weight: 700; overflow-wrap: anywhere; }
+        .review-note { color: var(--muted); font-size: 12px; line-height: 1.9; }
+        .review-card .review-note { margin: 8px 0 0; font-size: 11px; }
+        .review-form h3 { margin-top: 0; color: var(--burgundy-dark); }
+        .review-form label { display: block; margin: 18px 0 8px; font-size: 14px; }
+        .review-form input, .review-form select, .review-form textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--cream);
+            color: var(--text);
+            padding: 12px 14px;
+            font-size: 16px;
+        }
+        .review-form textarea { min-height: 120px; resize: vertical; }
+        .review-form :is(input, select, textarea):focus-visible {
+            outline: 2px solid var(--gold); outline-offset: 3px;
+        }
+        .review-form .btn { margin-top: 18px; }
+        .rating-picker { padding: 0; border: 0; margin: 18px 0 0; }
+        .rating-picker legend { width: 100%; font-size: 14px; color: var(--muted); }
+        .rating-options { display: flex; justify-content: center; gap: 5px; direction: ltr; }
+        .review-form .rating-options label { position: relative; margin: 12px 0 0; cursor: pointer; }
+        .review-form .rating-options input {
+            position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
+            opacity: 0; cursor: pointer;
+        }
+        .rating-options span {
+            display: grid; place-items: center; width: 44px; height: 44px;
+            font-size: 36px; color: #bcb7b0; border-radius: 9px;
+        }
+        .rating-options .selected span { color: var(--gold); }
+        .rating-options label:hover span { background: var(--beige); }
+        .rating-options input:focus-visible + span { outline: 2px solid var(--burgundy); outline-offset: 2px; }
+        #reviewStatus { line-height: 1.8; color: var(--green-dark); }
+        @media (max-width: 720px) {
+            .reviews-layout { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        #gallery .gallery-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+            max-width: 960px;
+            margin-inline: auto;
+        }
+        #gallery .gallery-item {
+            height: auto; aspect-ratio: auto; width: 100%; min-width: 0;
+            padding: 0; border: 1px solid var(--gold-light);
+            background: var(--beige); color: var(--cream); text-align: right;
+            box-shadow: 0 10px 28px rgba(35, 30, 24, .16);
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+        #gallery .gallery-item img,
+        #gallery .gallery-item video {
+            display: block; width: 100%; height: auto; aspect-ratio: 9 / 16;
+            object-fit: contain; background: var(--beige);
+        }
+        #gallery .gallery-caption {
+            display: block; position: static; padding: 16px 14px;
+            min-height: 58px; text-align: center; line-height: 1.8;
+            background: var(--burgundy-dark);
+            color: var(--cream); font-size: 15px; font-weight: 700;
+        }
+        #gallery .gallery-item::after {
+            pointer-events: none; inset: 12px 12px auto auto; padding: 8px 12px;
+            border-radius: 999px; font-size: 12px; background: rgba(75, 20, 37, .8);
+        }
+        #gallery .gallery-video-card { border: 2px solid var(--gold-light); }
+        #gallery .gallery-play {
+            position: absolute; z-index: 1; top: 42%; left: 50%; transform: translate(-50%, -50%);
+            display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+            background: var(--burgundy); color: var(--gold-light); border: 1px solid var(--gold-light);
+            box-shadow: 0 6px 20px rgba(0,0,0,.2); font-size: 20px; pointer-events: none;
+        }
+        #galleryVideoDialog {
+            width: min(520px, calc(100% - 24px)); max-height: 92dvh; padding: 16px;
+            background: var(--cream); border: 1px solid var(--gold); border-radius: 20px; color: var(--burgundy-dark);
+        }
+        #galleryVideoDialog::backdrop { background: rgba(25,18,20,.85); }
+        #galleryVideoDialog video { display: block; width: 100%; max-height: 75dvh; background: #171717; border-radius: 12px; }
+        .gallery-video-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+        .gallery-video-top h3 { margin: 0; font-size: 18px; }
+        .gallery-video-top button { width: 44px; height: 44px; flex-shrink: 0; border: 0; border-radius: 50%; background: var(--burgundy); color: white; font-size: 26px; cursor: pointer; }
+        #gallery .gallery-filter { min-height: 44px; transition: background .25s ease, border-color .25s ease; }
+        #gallery .gallery-filter:hover { border-color: var(--gold-light); }
+        #gallery :is(.gallery-item, .gallery-filter):focus-visible { outline: 3px solid var(--gold-light); outline-offset: 5px; }
+        #galleryEmpty { text-align: center; color: var(--beige); padding: 32px 16px; line-height: 1.9; }
+        #lightboxModal .lightbox-card { width: fit-content; max-width: 100%; }
+        #lightboxModal .lightbox-card img { width: auto; max-width: 100%; max-height: 82dvh; }
+        #lightboxClose { min-width: 44px; min-height: 44px; }
+        @media (hover: hover) {
+            #gallery .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(35, 30, 24, .22); }
+            #gallery .gallery-item:hover img { transform: none; }
+        }
+        @media (max-width: 980px) { #gallery .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 560px; } }
+        @media (max-width: 560px) { #gallery .gallery-grid { grid-template-columns: minmax(0, 1fr); max-width: 270px; } }
+        @media (prefers-reduced-motion: reduce) {
+            #gallery .gallery-item, #gallery .gallery-item img, #gallery .gallery-item::after, #gallery .gallery-filter { transition: none; transform: none; }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- يتم تحميل الهيدر من headr.html -->
+    <div id="header-placeholder"></div>
+
+
+    <main>
+
+        <!-- ================= الصفحة الرئيسية ================= -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="container hero-grid">
+
+                <div class="hero-content reveal">
+
+                    <div class="hero-mini">
+                        <span></span>
+                        صالون أيلول للتزيين النسائي
+                    </div>
+
+                    <h1>
+                        AYLOL
+                        <em>BEAUTY</em>
+                    </h1>
+
+                    <div class="hero-arabic-title">
+                        جمالكِ يستحق العناية
+                    </div>
+
+                    <p class="hero-description">
+                        في أيلول نصنع تفاصيل إطلالتك بعناية،
+                        من الميكب وتسريحات الشعر إلى خدمات
+                        الجمال والعناية في أجواء أنثوية هادئة
+                        وراقية.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#services"
+                            class="btn btn-primary"
+                        >
+                            اكتشفي خدماتنا
+                        </a>
+
+                        <a
+                            href="#booking"
+                            class="btn btn-outline"
+                        >
+                            احجزي الآن
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual reveal">
+
+                    <div class="hero-image-main">
+
+                        <video id="heroVideo" muted loop playsinline controls preload="metadata"
+                               aria-label="فيديو صالون أيلول" hidden>
+                            <source src="media/hero/hero.mp4" type="video/mp4">
+                        </video>
+
+                        <img
+                            id="heroFallbackImage"
+                            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
+                            alt="صالون تجميل نسائي"
+                            loading="eager"
+                        >
+
+                    </div>
+
+                    <div class="hero-badge">
+
+                        <strong>
+                            AYLOL
+                        </strong>
+
+                        <span>
+                            Beauty<br>
+                            Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= عن الصالون ================= -->
+
+        <section class="section">
+
+            <div class="container about-grid">
+
+                <div class="about-image reveal">
+
+                    <img
+                        src="media/about/salon-enhanced.png"
+                        alt="تجربة صالون أيلول"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="about-content reveal">
+
+                    <div class="eyebrow">
+                        ABOUT AYLOL
+                    </div>
+
+                    <h2>
+                        جمال بتفاصيل
+                    </h2>
+
+                    <h3>
+                        صُممت من أجلكِ
+                    </h3>
+
+                    <p>
+                        أيلول بيوتي مساحة جمالية نسائية
+                        تجمع الأناقة والخصوصية والاهتمام
+                        بالتفاصيل، لنقدم لكِ تجربة متكاملة
+                        منذ اختيار الخدمة وحتى اكتمال
+                        إطلالتك.
+                    </p>
+
+                    <div class="about-features">
+
+                        <div class="about-feature">
+                            خصوصية وراحة
+                        </div>
+
+                        <div class="about-feature">
+                            فريق متخصص
+                        </div>
+
+                        <div class="about-feature">
+                            اهتمام بالتفاصيل
+                        </div>
+
+                        <div class="about-feature">
+                            مواعيد منظمة
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= الخدمات ================= -->
+
+        <section
+            class="section section-soft"
+            id="services"
+        >
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <span class="eyebrow">
+                        OUR SERVICES
+                    </span>
+
+                    <h2>
+                        خدمات <span>أيلول</span>
+                    </h2>
+
+                    <p>
+                        مجموعة من خدمات الجمال والعناية
+                        صُممت لتناسب احتياجاتك المختلفة.
+                    </p>
+
+                </div>
+
+                <div class="services-grid">
+
+                    <article
+                        class="service-card reveal"
+                        id="makeup"
+                    >
+
+                        <div class="service-photo">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85"
+                                alt="خدمات الميكب"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                01
+                            </span>
+
+                            <h3>
+                                الميكب
+                            </h3>
+
+                            <p>
+                                إطلالات ناعمة وسهرات
+                                وملكات وعرائس.
+                            </p>
+
+                            <span class="booking-available">
+                                متاح للحجز
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="service-card reveal"
+                        id="hair"
+                    >
+
+                        <div class="service-photo">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85"
+                                alt="خدمات الشعر"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                02
+                            </span>
+
+                            <h3>
+                                الشعر
+                            </h3>
+
+                            <p>
+                                تسريحات وويفي وريتروا
+                                واستشوار وعناية بالشعر.
+                            </p>
+
+                            <span class="booking-available">
+                                هير ستايل متاح للحجز
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-photo">
+
+                            <img
+                                src="media/services/nails-enhanced.png"
+                                style="object-position: center 18%;"
+                                alt="خدمات الأظافر"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                03
+                            </span>
+
+                            <h3>
+                                الأظافر
+                            </h3>
+
+                            <p>
+                                منكير وبديكير وجل
+                                وتنظيف وعناية متخصصة.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-photo">
+
+                            <img
+                                src="media/services/lashes.jpg"
+                                alt="خدمات الرموش"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                04
+                            </span>
+
+                            <h3>
+                                الرموش
+                            </h3>
+
+                            <p>
+                                خيارات متنوعة للرموش
+                                اليومية والشهرية.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-photo">
+
+                            <img
+                                src="media/services/wax.jpg"
+                                alt="العناية"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                05
+                            </span>
+
+                            <h3>
+                                العناية والشمع
+                            </h3>
+
+                            <p>
+                                خدمات عناية متكاملة
+                                للوجه والجسم.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="service-card reveal">
+
+                        <div class="service-photo">
+
+                            <img
+                                src="media/services/treatments.webp"
+                                alt="صبغات الشعر"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="service-body">
+
+                            <span class="service-number">
+                                06
+                            </span>
+
+                            <h3>
+                                الصبغات والعلاجات
+                            </h3>
+
+                            <p>
+                                صبغات وبروتين وترميم
+                                وعناية بفروة الرأس.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= الخدمات القابلة للحجز ================= -->
+
+        <section class="section" id="reservations">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+
+                    <span class="eyebrow">
+                        BOOKABLE SERVICES
+                    </span>
+
+                    <h2>
+                        احجزي <span>إطلالتك</span>
+                    </h2>
+
+                    <p>
+                        الحجز الإلكتروني متاح حاليًا لخدمات
+                        الميكب آرتست والهير ستايل فقط.
+                    </p>
+
+                </div>
+
+                <div class="featured-grid">
+
+                    <article class="featured-card reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85"
+                            alt="Makeup Artist"
+                            loading="lazy"
+                        >
+
+                        <div class="featured-content">
+
+                            <h3>
+                                Makeup Artist
+                            </h3>
+
+                            <p>
+                                مكياج ناعم، سهرات،
+                                ملكات وعرائس.
+                            </p>
+
+                            <button
+                                class="btn"
+                                type="button"
+                                data-booking-type="makeup"
+                            >
+                                احجزي ميكب
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="featured-card reveal">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85"
+                            alt="Hair Style"
+                            loading="lazy"
+                        >
+
+                        <div class="featured-content">
+
+                            <h3>
+                                Hair Style
+                            </h3>
+
+                            <p>
+                                ويفي، ريترو، تسريحات
+                                واستشوار.
+                            </p>
+
+                            <button
+                                class="btn"
+                                type="button"
+                                data-booking-type="hair"
+                            >
+                                احجزي هير ستايل
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= الأسعار ================= -->
+
+        <section
+            class="section section-soft"
+            id="prices"
+        >
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <span class="eyebrow">
+                        PRICE LIST
+                    </span>
+
+                    <h2>
+                        قائمة <span>الأسعار</span>
+                    </h2>
+
+                    <p>
+                        يمكنك البحث عن أي خدمة أو اختيار
+                        القسم المناسب لعرض الأسعار بسهولة.
+                    </p>
+
+                </div>
+
+
+                <div class="price-toolbar reveal">
+
+                    <button
+                        class="price-filter active"
+                        type="button"
+                        data-price-filter="all"
+                    >
+                        الكل
+                    </button>
+
+                    <button
+                        class="price-filter"
+                        type="button"
+                        data-price-filter="hair"
+                    >
+                        الشعر
+                    </button>
+
+                    <button
+                        class="price-filter"
+                        type="button"
+                        data-price-filter="makeup"
+                    >
+                        الميكب
+                    </button>
+
+                    <button
+                        class="price-filter"
+                        type="button"
+                        data-price-filter="nails"
+                    >
+                        الأظافر
+                    </button>
+
+                    <button
+                        class="price-filter"
+                        type="button"
+                        data-price-filter="lashes"
+                    >
+                        الرموش
+                    </button>
+
+                    <button
+                        class="price-filter"
+                        type="button"
+                        data-price-filter="wax"
+                    >
+                        الشمع
+                    </button>
+
+                </div>
+
+
+                <div class="price-search-wrap reveal">
+
+                    <input
+                        type="search"
+                        id="priceSearch"
+                        maxlength="60"
+                        placeholder="ابحثي عن خدمة..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="prices-grid" id="pricesGrid">
+
+
+                    <!-- الشعر -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="hair"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>الشعر</h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص أطراف
+                                </span>
+                                <span class="price-value">
+                                    40 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص طبقة واحدة
+                                </span>
+                                <span class="price-value">
+                                    60 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص غرة
+                                </span>
+                                <span class="price-value">
+                                    20 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص تدريج
+                                </span>
+                                <span class="price-value">
+                                    115 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص بوي
+                                </span>
+                                <span class="price-value">
+                                    115 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص أطفال
+                                </span>
+                                <span class="price-value">
+                                    40 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    قص أطراف أطفال
+                                </span>
+                                <span class="price-value">
+                                    30 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار شعر طويل
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار شعر وسط
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    80 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار شعر قصير
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    60 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار فرشة طويل
+                                </span>
+                                <span class="price-value">
+                                    120 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار فرشة وسط
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار فرشة قصير
+                                </span>
+                                <span class="price-value">
+                                    80 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار أطفال
+                                </span>
+                                <span class="price-value">
+                                    50 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    ويفي أو ريترو طويل
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    200 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    ويفي أو ريترو وسط
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    180 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    ويفي أو ريترو قصير
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    160 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تسريحة ويفي أو ريترو طويل
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    250 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تسريحة ويفي أو ريترو وسط
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    230 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تسريحة ويفي أو ريترو قصير
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    210 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تسريحة بدون استشوار
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    إضافة كلبسات
+                                </span>
+                                <span class="price-value">
+                                    5 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    استشوار إكستنشن
+                                </span>
+                                <span class="price-value">
+                                    15 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    غسيل شعر
+                                </span>
+                                <span class="price-value">
+                                    20 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    حمام زيت
+                                </span>
+                                <span class="price-value">
+                                    40 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    ديتوكس فروة الرأس
+                                </span>
+                                <span class="price-value">
+                                    150 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- صبغات الشعر -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="hair"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                الصبغات والعلاجات
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    صبغة شعر لون واحد طويل
+                                </span>
+                                <span class="price-value">
+                                    350 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    صبغة شعر لون واحد وسط
+                                </span>
+                                <span class="price-value">
+                                    300 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    صبغة شعر لون واحد قصير
+                                </span>
+                                <span class="price-value">
+                                    250 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    صبغة جذور
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    بروتين جميع أطوال الشعر
+                                </span>
+                                <span class="price-value">
+                                    575 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    بروتين جذور
+                                </span>
+                                <span class="price-value">
+                                    280 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    ترميم جميع أطوال الشعر
+                                </span>
+                                <span class="price-value">
+                                    400 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- الميكب -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="makeup"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                الميكب
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    مكياج ناعم وتخرج
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    200 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    مكياج سهرة
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    300 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    مكياج ملكة
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    450 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    مكياج عروس
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    1000 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    بكج العروسة
+                                    <span class="price-bookable">
+                                        متاح للحجز
+                                    </span>
+                                </span>
+                                <span class="price-value">
+                                    1500 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لمعة الجسم
+                                </span>
+                                <span class="price-value">
+                                    40 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    رموش
+                                </span>
+                                <span class="price-value">
+                                    20 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- الأظافر -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="nails"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                الأظافر
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    كلاسيك منكير يد
+                                </span>
+                                <span class="price-value">
+                                    65 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    كلاسيك بديكير رجل
+                                </span>
+                                <span class="price-value">
+                                    75 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    كلاسيك بدي منكير
+                                </span>
+                                <span class="price-value">
+                                    140 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    سبيشل منكير يد
+                                </span>
+                                <span class="price-value">
+                                    75 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    سبيشل بديكير رجل
+                                </span>
+                                <span class="price-value">
+                                    95 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    سبيشل بدي منكير
+                                </span>
+                                <span class="price-value">
+                                    170 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    مساج 30 دقيقة
+                                </span>
+                                <span class="price-value">
+                                    25 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    برد أظافر فقط
+                                </span>
+                                <span class="price-value">
+                                    20 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تنظيف روسي يد
+                                </span>
+                                <span class="price-value">
+                                    85 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تنظيف روسي رجل
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تنظيف روسي
+                                </span>
+                                <span class="price-value">
+                                    185 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لون مناكير عادي يد
+                                </span>
+                                <span class="price-value">
+                                    15 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لون مناكير عادي رجل
+                                </span>
+                                <span class="price-value">
+                                    15 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لون مناكير براند يد
+                                </span>
+                                <span class="price-value">
+                                    30 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لون مناكير براند رجل
+                                </span>
+                                <span class="price-value">
+                                    30 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    لون جل
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    أومبري لون عادي
+                                </span>
+                                <span class="price-value">
+                                    50 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    أومبري جل
+                                </span>
+                                <span class="price-value">
+                                    120 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    فرنش
+                                </span>
+                                <span class="price-value">
+                                    50 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    فرنش جل
+                                </span>
+                                <span class="price-value">
+                                    120 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    نيل آرت كروم
+                                </span>
+                                <span class="price-value">
+                                    120 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    نيل آرت كروم ظفر واحد
+                                </span>
+                                <span class="price-value">
+                                    12 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    نيل آرت 3D ظفر واحد
+                                </span>
+                                <span class="price-value">
+                                    30 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    جل إكستنشن فوم
+                                </span>
+                                <span class="price-value">
+                                    500 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    جل إكستنشن فرنش
+                                </span>
+                                <span class="price-value">
+                                    450 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    جل إكستنشن فايبر جلاس
+                                </span>
+                                <span class="price-value">
+                                    500 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    جل إكستنشن أظافر
+                                </span>
+                                <span class="price-value">
+                                    400 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    بيلدر إكستنشن
+                                </span>
+                                <span class="price-value">
+                                    400 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    إزالة جل
+                                </span>
+                                <span class="price-value">
+                                    90 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    إعادة تعبئة
+                                </span>
+                                <span class="price-value">
+                                    150 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    أظافر صناعية
+                                </span>
+                                <span class="price-value">
+                                    75 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    إزالة بيلدر
+                                </span>
+                                <span class="price-value">
+                                    115 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    أظافر صناعية أطفال
+                                </span>
+                                <span class="price-value">
+                                    45 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    جلسة فيلر بارد
+                                </span>
+                                <span class="price-value">
+                                    250 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    بكج 4 جلسات فيلر بارد
+                                </span>
+                                <span class="price-value">
+                                    750 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- الرموش -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="lashes"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                الرموش
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تركيب رموش يومية طبيعية
+                                </span>
+                                <span class="price-value">
+                                    100 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تركيب رموش كاملة
+                                </span>
+                                <span class="price-value">
+                                    50 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تركيب رموش يومية طرف
+                                </span>
+                                <span class="price-value">
+                                    25 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تركيب رموش شهرية
+                                </span>
+                                <span class="price-value">
+                                    185 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    تعبئة الرموش الشهرية
+                                    خلال أسبوعين
+                                </span>
+                                <span class="price-value">
+                                    95 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- الشمع -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="wax"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                الشمع
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شمع للوجه
+                                </span>
+                                <span class="price-value">
+                                    45 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شمع شنب
+                                </span>
+                                <span class="price-value">
+                                    20 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شمع رقبة
+                                </span>
+                                <span class="price-value">
+                                    25 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+
+                    <!-- هايلايت -->
+
+                    <details
+                        class="price-card reveal"
+                        data-category="hair"
+                    >
+
+                        <summary class="price-card-header">
+                            <h3>
+                                صبغة هايلايت
+                            </h3>
+                        <span class="price-toggle" aria-hidden="true"></span>
+                        </summary>
+
+                        <div class="price-list">
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شعر قصير
+                                </span>
+                                <span class="price-value">
+                                    450 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شعر وسط
+                                </span>
+                                <span class="price-value">
+                                    550 ريال
+                                </span>
+                            </div>
+
+                            <div class="price-item">
+                                <span class="price-name">
+                                    شعر طويل
+                                </span>
+                                <span class="price-value">
+                                    650 ريال
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= معرض الأعمال ================= -->
+
+        <section
+            class="section section-green"
+            id="gallery"
+        >
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <span class="eyebrow">
+                        لمسات من أيلول
+                    </span>
+
+                    <h2 style="color:#fff;">
+                        معرض <span>أعمالنا</span>
+                    </h2>
+
+                    <p style="color:rgba(255,255,255,.72);">
+                        اكتشفي بعضًا من إطلالاتنا وأعمالنا الأخيرة
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-filters reveal">
+
+                    <button
+                        class="gallery-filter active"
+                        data-gallery-filter="all"
+                        type="button"
+                    >
+                        الكل
+                    </button>
+
+                    <button
+                        class="gallery-filter"
+                        data-gallery-filter="makeup"
+                        type="button"
+                    >
+                        الميكب
+                    </button>
+
+                    <button
+                        class="gallery-filter"
+                        data-gallery-filter="hair"
+                        type="button"
+                    >
+                        الشعر
+                    </button>
+
+                    <button
+                        class="gallery-filter"
+                        data-gallery-filter="nails"
+                        type="button"
+                    >
+                        الأظافر
+                    </button>
+
+                    <button
+                        class="gallery-filter"
+                        data-gallery-filter="brides"
+                        type="button"
+                    >
+                        العرائس
+                    </button>
+
+                </div>
+
+
+                <div class="gallery-grid" aria-label="صور أعمال أيلول"></div>
+                <p id="galleryEmpty" role="status" hidden></p>
+            </div>
+
+        </section>
+
+
+        <!-- ================= العروض ================= -->
+
+        <section
+            class="section"
+            id="offers"
+        >
+
+            <div class="container">
+
+                <link rel="stylesheet" href="media/offers/offers.css">
+                <div class="section-heading center reveal">
+                    <span class="eyebrow">AYLOL SPECIAL OFFERS</span>
+                    <h2>عروض <span>أيلول</span></h2>
+                </div>
+                <!-- أضيفي بطاقات العروض المستقبلية داخل هذه الشبكة. -->
+                <div class="offers-grid">
+                    <article class="seasonal-offer reveal" aria-labelledby="nationalOfferTitle">
+                        <div class="seasonal-photo">
+                            <img src="media/offers/national-day-96.jpeg"
+                                 alt="ملصق عروض اليوم الوطني السعودي 96 من أيلول بيوتي"
+                                 width="896" height="1195" loading="lazy" decoding="async">
+                        </div>
+                        <div class="seasonal-info">
+                            <span class="offer-badge">عرض خاص</span>
+                            <h3 id="nationalOfferTitle">عروض اليوم الوطني 96 🇸🇦</h3>
+                            <p class="seasonal-intro">احتفالًا بيوم الوطن… عروض خاصة من أيلول بيوتي</p>
+                            <p class="offer-until">حتى 30 سبتمبر</p>
+                            <div class="national-offer-details">
+                                <p>96 عام من العز والفخر</p>
+                                <dl class="national-prices">
+                                    <div><dt>ديتوكس فروة الرأس</dt><dd>106 ريال</dd></div>
+                                    <div><dt>استشوار شعر طويل</dt><dd>96 ريال</dd></div>
+                                    <div><dt>بديكير ومنيكير كلاسيك</dt><dd>116 ريال</dd></div>
+                                    <div><dt>لون مناكير عادي</dt><dd>6 ريال</dd></div>
+                                    <div><dt>صبغة جذور</dt><dd>96 ريال</dd></div>
+                                </dl>
+                                <p class="national-discount">بالإضافة إلى خصم <strong>6%</strong> على جميع الخدمات</p>
+                                <p class="national-duration">مدة العرض: من 10 سبتمبر حتى 30 سبتمبر</p>
+                            </div>
+                            <button class="btn btn-primary" type="button" id="nationalOfferDetails"
+                                    aria-haspopup="dialog" aria-controls="nationalOfferDialog">شاهدي تفاصيل العرض</button>
+                        </div>
+                    </article>
+                </div>
+                <dialog id="nationalOfferDialog" aria-labelledby="nationalDialogTitle">
+                    <div class="national-dialog-top">
+                        <h3 id="nationalDialogTitle">عروض اليوم الوطني 96 🇸🇦</h3>
+                        <button class="national-close" type="button" aria-label="إغلاق تفاصيل العرض" autofocus>×</button>
+                    </div>
+                    <div class="national-dialog-body">
+                        <img class="national-poster" src="media/offers/national-day-96.jpeg"
+                             alt="تفاصيل عروض اليوم الوطني 96 من أيلول بيوتي"
+                             width="896" height="1195" loading="lazy" decoding="async">
+                        <div class="national-dialog-details"></div>
+                    </div>
+                </dialog>
+                <script src="media/offers/offers.js"></script>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= لماذا أيلول ================= -->
+
+        <section class="section section-soft">
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <span class="eyebrow">
+                        WHY AYLOL
+                    </span>
+
+                    <h2>
+                        لماذا <span>أيلول؟</span>
+                    </h2>
+
+                </div>
+
+                <div class="why-grid">
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">
+                            ♡
+                        </div>
+
+                        <h3>
+                            خصوصية وراحة
+                        </h3>
+
+                        <p>
+                            تجربة أنثوية هادئة
+                            وخصوصية تامة.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            فريق متخصص
+                        </h3>
+
+                        <p>
+                            اهتمام بإطلالتك بواسطة
+                            مختصات في الجمال.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">
+                            ◇
+                        </div>
+
+                        <h3>
+                            جودة وعناية
+                        </h3>
+
+                        <p>
+                            عناية بأدق التفاصيل
+                            والمنتجات المختارة.
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-card reveal">
+
+                        <div class="why-icon">
+                            ◷
+                        </div>
+
+                        <h3>
+                            تنظيم المواعيد
+                        </h3>
+
+                        <p>
+                            نظام حجز بسيط يساعد
+                            على تنظيم موعدك.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= الحجز ================= -->
+
+        <section
+            class="section"
+            id="booking"
+        >
+
+            <div class="container booking-layout">
+
+                <div class="booking-intro reveal">
+
+                    <small>
+                        BOOK YOUR APPOINTMENT
+                    </small>
+
+                    <h2>
+                        احجزي موعدك
+                    </h2>
+
+                    <p>
+                        اختاري ميكب آرتست أو هير ستايل
+                        ثم أدخلي بيانات الموعد، وبعد مراجعة
+                        الطلب سيتم تحويلك إلى واتساب الصالون.
+                    </p>
+
+                    <div class="booking-note">
+
+                        الحجز الإلكتروني متاح حاليًا
+                        لخدمات الميكب والهير ستايل فقط.
+                        إرسال الطلب عبر واتساب لا يعني
+                        تأكيد الموعد حتى يتم الرد عليكِ
+                        من إدارة الصالون.
+
+                    </div>
+
+                </div>
+
+
+                <div class="booking-form-card reveal">
+
+                    <div
+                        class="booking-error"
+                        id="bookingError"
+                        role="alert"
+                    ></div>
+
+                    <div class="booking-type-options">
+
+                        <button
+                            class="booking-type active"
+                            type="button"
+                            data-type="makeup"
+                        >
+
+                            <strong>
+                                Makeup Artist
+                            </strong>
+
+                            <span>
+                                خدمات الميكب
+                            </span>
+
+                        </button>
+
+                        <button
+                            class="booking-type"
+                            type="button"
+                            data-type="hair"
+                        >
+
+                            <strong>
+                                Hair Style
+                            </strong>
+
+                            <span>
+                                التسريحات والاستشوار
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <form
+                        id="bookingForm"
+                        novalidate
+                    >
+
+                        <input
+                            type="hidden"
+                            id="bookingType"
+                            value="makeup"
+                        >
+
+
+                        <div class="form-grid">
+
+                            <div class="form-group full">
+
+                                <label for="bookingService">
+                                    الخدمة
+                                </label>
+
+                                <select
+                                    id="bookingService"
+                                    required
+                                ></select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="customerName">
+                                    الاسم
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    maxlength="60"
+                                    autocomplete="name"
+                                    placeholder="اكتبي الاسم"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="customerPhone">
+                                    رقم الجوال
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="customerPhone"
+                                    maxlength="15"
+                                    inputmode="numeric"
+                                    autocomplete="tel"
+                                    placeholder="05xxxxxxxx"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="bookingDate">
+                                    التاريخ
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="bookingDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="bookingTime">
+                                    الوقت
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="bookingTime"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="guestCount">
+                                    عدد الأشخاص
+                                </label>
+
+                                <select id="guestCount">
+
+                                    <option value="1">
+                                        1
+                                    </option>
+
+                                    <option value="2">
+                                        2
+                                    </option>
+
+                                    <option value="3">
+                                        3
+                                    </option>
+
+                                    <option value="4">
+                                        4
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="bookingCity">
+                                    الفرع / الموقع
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="bookingCity"
+                                    maxlength="50"
+                                    placeholder="اختياري"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full">
+
+                                <label for="bookingNotes">
+                                    ملاحظات
+                                </label>
+
+                                <textarea
+                                    id="bookingNotes"
+                                    maxlength="300"
+                                    placeholder="يمكنك إضافة أي ملاحظة خاصة بالحجز"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary booking-submit"
+                        >
+                            مراجعة طلب الحجز
+                        </button>
+
+
+                        <div class="booking-terms">
+
+                            بالضغط على مراجعة الحجز
+                            فأنتِ تقرين بصحة البيانات المدخلة،
+                            وسيتم عرضها لكِ قبل إرسالها
+                            عبر واتساب.
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= التواصل ================= -->
+
+        <section
+            class="section section-soft"
+            id="contact"
+        >
+
+            <div class="container">
+
+                <div class="section-heading center reveal">
+
+                    <span class="eyebrow">
+                        CONTACT
+                    </span>
+
+                    <h2>
+                        تواصلي <span>معنا</span>
+                    </h2>
+
+                    <p>
+                        يسعدنا خدمتك والإجابة عن استفساراتك.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-grid">
+
+                    <article class="contact-card reveal">
+
+                        <small>
+                            WHATSAPP
+                        </small>
+
+                        <h3>
+                            واتساب واتصال
+                        </h3>
+
+                        <p>
+                            للحجز والاستفسارات
+                            وتأكيد المواعيد.
+                        </p>
+
+                        <p><a href="tel:+966568178738" dir="ltr" style="color:var(--burgundy);">+966 56 817 8738</a></p>
+                        <div class="contact-actions">
+                            <a class="contact-action contact-action-whatsapp" href="https://wa.me/966568178738" target="_blank" rel="noopener noreferrer">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 21l1.8-5.5A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 10h8M8 14h5"/></svg>
+                                واتساب
+                            </a>
+                            <a class="contact-action" href="tel:+966568178738">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m7 3 3 5-2 2a15 15 0 0 0 6 6l2-2 5 3-1 4C10 22 2 14 3 4Z"/></svg>
+                                اتصال
+                            </a>
+                        </div>
+
+                    </article>
+
+
+                    <article class="contact-card reveal">
+
+                        <small>
+                            LOCATION
+                        </small>
+
+                        <h3>
+                            موقع الصالون
+                        </h3>
+
+                        <p>
+                            <a href="https://maps.app.goo.gl/JBQuKSfknR59foDh9?g_st=iw"
+                               target="_blank" rel="noopener noreferrer"
+                               style="color:inherit;text-underline-offset:4px;">
+                                خميس مشيط / المحالة 📍
+                            </a>
+                        </p>
+
+                    </article>
+
+
+                    <article class="contact-card reveal">
+
+                        <small>
+                            WORKING HOURS
+                        </small>
+
+                        <h3>
+                            أوقات العمل
+                        </h3>
+
+                        <p>
+                            من الساعة <time datetime="09:00">9 صباحًا</time>
+                            إلى الساعة <time datetime="22:00">10 مساءً</time>
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section section-soft" id="reviews" aria-labelledby="reviewsTitle">
+            <div class="container">
+                <div class="section-heading center">
+                    <div class="eyebrow">تجربتكِ تهمنا</div>
+                    <h2 id="reviewsTitle">آراء <span>العميلات</span></h2>
+                    <p>كلمات نعتز بها وتجارب تسعدنا.</p>
+                </div>
+                <div class="reviews-layout">
+                    <form class="review-form" id="anonymousReviewForm">
+                        <h3>كيف كانت تجربتكِ؟</h3>
+                        <fieldset class="rating-picker">
+                            <legend>اضغطي على النجوم للتقييم</legend>
+                            <div class="rating-options">
+                                <label><input type="radio" name="rating" value="1" required aria-label="نجمة واحدة"><span aria-hidden="true">★</span></label>
+                                <label><input type="radio" name="rating" value="2" aria-label="نجمتان"><span aria-hidden="true">★</span></label>
+                                <label><input type="radio" name="rating" value="3" aria-label="3 نجوم"><span aria-hidden="true">★</span></label>
+                                <label><input type="radio" name="rating" value="4" aria-label="4 نجوم"><span aria-hidden="true">★</span></label>
+                                <label><input type="radio" name="rating" value="5" aria-label="5 نجوم"><span aria-hidden="true">★</span></label>
+                            </div>
+                        </fieldset>
+                        <p id="ratingLabel" class="review-note" aria-live="polite">لم تختاري تقييمًا بعد</p>
+                        <label for="anonymousReviewNote">ملاحظتكِ (اختياري)</label>
+                        <textarea id="anonymousReviewNote" maxlength="500" placeholder="اكتبي ملاحظتكِ دون اسم أو معلومات شخصية" aria-describedby="anonymousReviewPrivacy"></textarea>
+                        <p id="anonymousReviewPrivacy" class="review-note">لا نطلب اسمكِ. يُحفظ التقييم والملاحظة على هذا المتصفح فقط ولا يُنشران للزائرات الأخريات.</p>
+                        <button type="submit" class="btn btn-primary">حفظ التقييم</button>
+                        <p id="anonymousReviewStatus" role="status"></p>
+                    </form>
+                    <div class="reviews-cards" id="reviewCards" aria-label="بطاقات الآراء">
+                        <article class="review-card">
+                            <div class="review-stars" role="img" aria-label="5 من 5 نجوم">★★★★★</div>
+                            <blockquote>تعامل راقي جدًا</blockquote>
+                            <p class="review-note">بطاقة نموذجية لعرض التصميم</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- يتم تحميل الفوتر من footer.html -->
+    <div id="footer-placeholder"></div>
+
+    <a class="back-to-home" href="#home" aria-label="العودة إلى الرئيسية" title="العودة إلى الرئيسية">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 12 6-6 6 6M12 6v14"/></svg>
+    </a>
+
+
+    <!-- زر واتساب ثابت -->
+
+    <a
+        class="floating-whatsapp"
+        href="https://wa.me/966568178738"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="واتساب صالون أيلول"
+    >
+        واتساب
+    </a>
+
+
+    <!-- نافذة مراجعة الحجز -->
+
+    <div
+        class="modal"
+        id="bookingModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bookingModalTitle"
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                id="closeBookingModal"
+                type="button"
+                aria-label="إغلاق"
+            >
+                ×
+            </button>
+
+            <h3 id="bookingModalTitle">
+                مراجعة طلب الحجز
+            </h3>
+
+            <div
+                class="booking-summary"
+                id="bookingSummary"
+            ></div>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                style="width:100%;"
+                id="sendWhatsAppBooking"
+            >
+                تأكيد وإرسال عبر واتساب
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- نافذة الصور -->
+
+    <div
+        class="modal"
+        id="lightboxModal"
+        role="dialog"
+        aria-modal="true"
+    >
+
+        <div class="lightbox-card">
+
+            <button
+                class="modal-close"
+                id="lightboxClose"
+                type="button"
+                aria-label="إغلاق الصورة"
+                style="z-index:3;"
+            >
+                ×
+            </button>
+
+            <img
+                src=""
+                alt="صورة من معرض أعمال أيلول"
+                id="lightboxImage"
+            >
+
+        </div>
+
+    </div>
+
+
+    <script src="media/gallery/gallery.js"></script>
+    <script src="media/gallery/render-gallery.js"></script>
+    <script>
+
+        "use strict";
+
+
+        /* ==========================================
+           تحميل الهيدر والفوتر
+           ========================================== */
+
+        async function loadComponent(
+            targetId,
+            fileName
+        ) {
+
+            const target =
+                document.getElementById(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            try {
+
+                const response =
+                    await fetch(fileName, {
+                        cache: "no-cache"
+                    });
+
+                if (!response.ok) {
+                    throw new Error(
+                        "تعذر تحميل " + fileName
+                    );
+                }
+
+                const html =
+                    await response.text();
+
+                target.innerHTML = html;
+
+
+                /*
+                    عند إضافة HTML عن طريق innerHTML
+                    لا تعمل script tags تلقائيًا،
+                    لذلك نشغّل فقط السكربت الموجود
+                    في القوالب المحلية التي نتحكم بها.
+                */
+
+                const scripts =
+                    target.querySelectorAll("script");
+
+                scripts.forEach(function (oldScript) {
+
+                    const newScript =
+                        document.createElement("script");
+
+                    if (oldScript.src) {
+                        newScript.src =
+                            oldScript.src;
+                    } else {
+                        newScript.textContent =
+                            oldScript.textContent;
+                    }
+
+                    document.body.appendChild(
+                        newScript
+                    );
+
+                    oldScript.remove();
+
+                });
+
+            } catch (error) {
+
+                console.error(
+                    "Component load error:",
+                    error
+                );
+
+                target.innerHTML = `
+                    <div
+                        style="
+                            padding:15px;
+                            text-align:center;
+                            background:#fff0f3;
+                            color:#7d263f;
+                            font-family:'Tajawal',Tahoma,Arial,sans-serif;
+                        "
+                    >
+                        تعذر تحميل ${fileName}.
+                        شغّلي المشروع من Live Server.
+                    </div>
+                `;
+
+            }
+
+        }
+
+
+        Promise.all([
+            loadComponent(
+                "header-placeholder",
+                "headr.html"
+            ),
+
+            loadComponent(
+                "footer-placeholder",
+                "footer.html"
+            )
+        ]);
+
+
+        /* ==========================================
+           بيانات الحجز
+           ========================================== */
+
+        const BOOKING_SERVICES = {
+
+            makeup: [
+
+                {
+                    name: "مكياج ناعم وتخرج",
+                    price: 200
+                },
+
+                {
+                    name: "مكياج سهرة",
+                    price: 300
+                },
+
+                {
+                    name: "مكياج ملكة",
+                    price: 450
+                },
+
+                {
+                    name: "مكياج عروس",
+                    price: 1000
+                },
+
+                {
+                    name: "بكج العروسة",
+                    price: 1500
+                }
+
+            ],
+
+            hair: [
+
+                {
+                    name: "استشوار شعر طويل",
+                    price: 100
+                },
+
+                {
+                    name: "استشوار شعر وسط",
+                    price: 80
+                },
+
+                {
+                    name: "استشوار شعر قصير",
+                    price: 60
+                },
+
+                {
+                    name: "ويفي أو ريترو طويل",
+                    price: 200
+                },
+
+                {
+                    name: "ويفي أو ريترو وسط",
+                    price: 180
+                },
+
+                {
+                    name: "ويفي أو ريترو قصير",
+                    price: 160
+                },
+
+                {
+                    name: "تسريحة ويفي أو ريترو طويل",
+                    price: 250
+                },
+
+                {
+                    name: "تسريحة ويفي أو ريترو وسط",
+                    price: 230
+                },
+
+                {
+                    name: "تسريحة ويفي أو ريترو قصير",
+                    price: 210
+                }
+
+            ]
+
+        };
+
+
+        /*
+            ضعي رقم واتساب الصالون هنا
+            بدون + وبدون مسافات.
+
+            مثال سعودي:
+            9665XXXXXXXX
+        */
+
+        const WHATSAPP_NUMBER =
+            "966568178738";
+
+
+        let currentBookingType =
+            "makeup";
+
+        let bookingData =
+            null;
+
+
+        /* ==========================================
+           تحديث خدمات الحجز
+           ========================================== */
+
+        function updateBookingServices() {
+
+            const serviceSelect =
+                document.getElementById(
+                    "bookingService"
+                );
+
+            const typeInput =
+                document.getElementById(
+                    "bookingType"
+                );
+
+            if (!serviceSelect) {
+                return;
+            }
+
+            serviceSelect.replaceChildren();
+
+            const services =
+                BOOKING_SERVICES[
+                    currentBookingType
+                ] || [];
+
+            services.forEach(function (service) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+                option.value =
+                    service.name;
+
+                option.dataset.price =
+                    String(service.price);
+
+                option.textContent =
+                    service.name +
+                    " — " +
+                    service.price +
+                    " ريال";
+
+                serviceSelect.appendChild(
+                    option
+                );
+
+            });
+
+            if (typeInput) {
+                typeInput.value =
+                    currentBookingType;
+            }
+
+        }
+
+
+        updateBookingServices();
+
+
+        /* ==========================================
+           اختيار نوع الحجز
+           ========================================== */
+
+        document
+            .querySelectorAll(".booking-type")
+            .forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        document
+                            .querySelectorAll(
+                                ".booking-type"
+                            )
+                            .forEach(
+                                function (item) {
+                                    item.classList.remove(
+                                        "active"
+                                    );
+                                }
+                            );
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                        currentBookingType =
+                            button.dataset.type;
+
+                        updateBookingServices();
+
+                    }
+                );
+
+            });
+
+
+        document
+            .querySelectorAll(
+                "[data-booking-type]"
+            )
+            .forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const type =
+                            button.dataset.bookingType;
+
+                        const matchingButton =
+                            document.querySelector(
+                                '.booking-type[data-type="' +
+                                type +
+                                '"]'
+                            );
+
+                        if (matchingButton) {
+                            matchingButton.click();
+                        }
+
+                        document
+                            .getElementById("booking")
+                            ?.scrollIntoView({
+                                behavior: "smooth"
+                            });
+
+                    }
+                );
+
+            });
+
+
+        /* ==========================================
+           منع اختيار تاريخ سابق
+           ========================================== */
+
+        const bookingDateInput =
+            document.getElementById(
+                "bookingDate"
+            );
+
+        if (bookingDateInput) {
+
+            const today =
+                new Date();
+
+            const localDate =
+                new Date(
+                    today.getTime() -
+                    today.getTimezoneOffset() *
+                    60000
+                )
+                    .toISOString()
+                    .split("T")[0];
+
+            bookingDateInput.min =
+                localDate;
+
+        }
+
+
+        /* ==========================================
+           التحقق من الجوال
+           ========================================== */
+
+        function normalizeSaudiPhone(value) {
+
+            const digits =
+                value.replace(/\D/g, "");
+
+            if (/^05\d{8}$/.test(digits)) {
+                return "966" + digits.slice(1);
+            }
+
+            if (/^5\d{8}$/.test(digits)) {
+                return "966" + digits;
+            }
+
+            if (/^9665\d{8}$/.test(digits)) {
+                return digits;
+            }
+
+            return null;
+
+        }
+
+
+        /* ==========================================
+           نموذج الحجز
+           ========================================== */
+
+        const bookingForm =
+            document.getElementById(
+                "bookingForm"
+            );
+
+        const bookingError =
+            document.getElementById(
+                "bookingError"
+            );
+
+
+        function showBookingError(message) {
+
+            if (!bookingError) {
+                return;
+            }
+
+            bookingError.textContent =
+                message;
+
+            bookingError.classList.add(
+                "show"
+            );
+
+        }
+
+
+        function hideBookingError() {
+
+            if (!bookingError) {
+                return;
+            }
+
+            bookingError.textContent =
+                "";
+
+            bookingError.classList.remove(
+                "show"
+            );
+
+        }
+
+
+        if (bookingForm) {
+
+            bookingForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+                    hideBookingError();
+
+
+                    const serviceSelect =
+                        document.getElementById(
+                            "bookingService"
+                        );
+
+                    const name =
+                        document
+                            .getElementById(
+                                "customerName"
+                            )
+                            .value
+                            .trim();
+
+                    const phone =
+                        document
+                            .getElementById(
+                                "customerPhone"
+                            )
+                            .value
+                            .trim();
+
+                    const date =
+                        document.getElementById(
+                            "bookingDate"
+                        ).value;
+
+                    const time =
+                        document.getElementById(
+                            "bookingTime"
+                        ).value;
+
+                    const guests =
+                        document.getElementById(
+                            "guestCount"
+                        ).value;
+
+                    const location =
+                        document
+                            .getElementById(
+                                "bookingCity"
+                            )
+                            .value
+                            .trim();
+
+                    const notes =
+                        document
+                            .getElementById(
+                                "bookingNotes"
+                            )
+                            .value
+                            .trim();
+
+
+                    if (
+                        name.length < 2 ||
+                        name.length > 60
+                    ) {
+
+                        showBookingError(
+                            "يرجى إدخال اسم صحيح."
+                        );
+
+                        return;
+                    }
+
+
+                    const normalizedPhone =
+                        normalizeSaudiPhone(
+                            phone
+                        );
+
+                    if (!normalizedPhone) {
+
+                        showBookingError(
+                            "يرجى إدخال رقم جوال سعودي صحيح مثل 05xxxxxxxx."
+                        );
+
+                        return;
+                    }
+
+
+                    if (!date) {
+
+                        showBookingError(
+                            "يرجى اختيار تاريخ الموعد."
+                        );
+
+                        return;
+                    }
+
+
+                    if (!time) {
+
+                        showBookingError(
+                            "يرجى اختيار وقت الموعد."
+                        );
+
+                        return;
+                    }
+
+
+                    const selectedOption =
+                        serviceSelect.options[
+                            serviceSelect.selectedIndex
+                        ];
+
+
+                    if (!selectedOption) {
+
+                        showBookingError(
+                            "يرجى اختيار الخدمة."
+                        );
+
+                        return;
+                    }
+
+
+                    bookingData = {
+
+                        type:
+                            currentBookingType ===
+                            "makeup"
+                                ? "Makeup Artist"
+                                : "Hair Style",
+
+                        service:
+                            selectedOption.value,
+
+                        price:
+                            selectedOption.dataset
+                                .price,
+
+                        name:
+                            name,
+
+                        phone:
+                            normalizedPhone,
+
+                        date:
+                            date,
+
+                        time:
+                            time,
+
+                        guests:
+                            guests,
+
+                        location:
+                            location,
+
+                        notes:
+                            notes
+
+                    };
+
+
+                    renderBookingSummary(
+                        bookingData
+                    );
+
+                    openBookingModal();
+
+                }
+            );
+
+        }
+
+
+        /* ==========================================
+           ملخص الحجز
+           ========================================== */
+
+        function createSummaryRow(
+            label,
+            value
+        ) {
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "summary-row";
+
+            const labelSpan =
+                document.createElement("span");
+
+            const valueSpan =
+                document.createElement("span");
+
+            labelSpan.textContent =
+                label;
+
+            valueSpan.textContent =
+                value;
+
+            row.append(
+                labelSpan,
+                valueSpan
+            );
+
+            return row;
+
+        }
+
+
+        function renderBookingSummary(data) {
+
+            const summary =
+                document.getElementById(
+                    "bookingSummary"
+                );
+
+            if (!summary) {
+                return;
+            }
+
+            summary.replaceChildren();
+
+            summary.appendChild(
+                createSummaryRow(
+                    "نوع الحجز",
+                    data.type
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "الخدمة",
+                    data.service
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "السعر",
+                    data.price + " ريال"
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "الاسم",
+                    data.name
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "التاريخ",
+                    data.date
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "الوقت",
+                    data.time
+                )
+            );
+
+            summary.appendChild(
+                createSummaryRow(
+                    "عدد الأشخاص",
+                    data.guests
+                )
+            );
+
+            if (data.location) {
+
+                summary.appendChild(
+                    createSummaryRow(
+                        "الفرع / الموقع",
+                        data.location
+                    )
+                );
+
+            }
+
+            if (data.notes) {
+
+                summary.appendChild(
+                    createSummaryRow(
+                        "الملاحظات",
+                        data.notes
+                    )
+                );
+
+            }
+
+        }
+
+
+        /* ==========================================
+           نافذة الحجز
+           ========================================== */
+
+        const bookingModal =
+            document.getElementById(
+                "bookingModal"
+            );
+
+
+        function openBookingModal() {
+
+            if (!bookingModal) {
+                return;
+            }
+
+            bookingModal.classList.add(
+                "open"
+            );
+
+            document.body.classList.add(
+                "modal-open"
+            );
+
+        }
+
+
+        function closeBookingModal() {
+
+            if (!bookingModal) {
+                return;
+            }
+
+            bookingModal.classList.remove(
+                "open"
+            );
+
+            document.body.classList.remove(
+                "modal-open"
+            );
+
+        }
+
+
+        document
+            .getElementById(
+                "closeBookingModal"
+            )
+            ?.addEventListener(
+                "click",
+                closeBookingModal
+            );
+
+
+        bookingModal?.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    bookingModal
+                ) {
+                    closeBookingModal();
+                }
+
+            }
+        );
+
+
+        /* ==========================================
+           إرسال واتساب
+           ========================================== */
+
+        document
+            .getElementById(
+                "sendWhatsAppBooking"
+            )
+            ?.addEventListener(
+                "click",
+                function () {
+
+                    if (!bookingData) {
+                        return;
+                    }
+
+
+                    const message = [
+                        "السلام عليكم،",
+                        "",
+                        "أرغب في حجز موعد لدى صالون أيلول AYLOL BEAUTY.",
+                        "",
+                        "نوع الحجز: " + bookingData.type,
+                        "الخدمة: " + bookingData.service,
+                        "السعر: " + bookingData.price + " ريال",
+                        "الاسم: " + bookingData.name,
+                        "رقم الجوال: " + bookingData.phone,
+                        "التاريخ: " + bookingData.date,
+                        "الوقت: " + bookingData.time,
+                        "عدد الأشخاص: " + bookingData.guests,
+                        bookingData.location
+                            ? "الفرع / الموقع: " +
+                              bookingData.location
+                            : "",
+                        bookingData.notes
+                            ? "الملاحظات: " +
+                              bookingData.notes
+                            : "",
+                        "",
+                        "أرجو تأكيد توفر الموعد، وشكرًا."
+                    ]
+                    .filter(Boolean)
+                    .join("\n");
+
+
+                    const whatsappUrl =
+                        "https://wa.me/" +
+                        WHATSAPP_NUMBER +
+                        "?text=" +
+                        encodeURIComponent(
+                            message
+                        );
+
+
+                    window.open(
+                        whatsappUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+
+                }
+            );
+
+
+        /* ==========================================
+           فلترة الأسعار
+           ========================================== */
+
+        let activePriceCategory =
+            "all";
+
+
+        const priceCards =
+            Array.from(
+                document.querySelectorAll(
+                    ".price-card"
+                )
+            );
+
+
+        function filterPrices() {
+
+            const searchValue =
+                document
+                    .getElementById(
+                        "priceSearch"
+                    )
+                    ?.value
+                    .trim()
+                    .toLowerCase() || "";
+
+
+            priceCards.forEach(
+                function (card) {
+
+                    const category =
+                        card.dataset.category;
+
+                    const text =
+                        card.textContent
+                            .toLowerCase();
+
+
+                    const categoryMatch =
+                        activePriceCategory ===
+                            "all" ||
+                        category ===
+                            activePriceCategory;
+
+
+                    const searchMatch =
+                        !searchValue ||
+                        text.includes(
+                            searchValue
+                        );
+
+
+                    // Reveal matching prices, and restore the previous state after search.
+                    if (searchValue) {
+                        if (!card.hasAttribute("data-open-before-search")) {
+                            card.dataset.openBeforeSearch = String(card.open);
+                        }
+                        card.open = categoryMatch && searchMatch;
+                    } else if (card.hasAttribute("data-open-before-search")) {
+                        card.open = card.dataset.openBeforeSearch === "true";
+                        delete card.dataset.openBeforeSearch;
+                    }
+
+                    card.classList.toggle(
+                        "hidden",
+                        !(
+                            categoryMatch &&
+                            searchMatch
+                        )
+                    );
+
+                }
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                ".price-filter"
+            )
+            .forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        document
+                            .querySelectorAll(
+                                ".price-filter"
+                            )
+                            .forEach(
+                                function (item) {
+                                    item.classList.remove(
+                                        "active"
+                                    );
+                                }
+                            );
+
+                        button.classList.add(
+                            "active"
+                        );
+
+                        activePriceCategory =
+                            button.dataset
+                                .priceFilter;
+
+                        filterPrices();
+
+                    }
+                );
+
+            });
+
+
+        document
+            .getElementById(
+                "priceSearch"
+            )
+            ?.addEventListener(
+                "input",
+                filterPrices
+            );
+
+
+        /* ==========================================
+           معرض الأعمال
+           ========================================== */
+
+        document
+            .querySelectorAll(
+                ".gallery-filter"
+            )
+            .forEach(function (button) {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        const filter =
+                            button.dataset
+                                .galleryFilter;
+
+
+                        document
+                            .querySelectorAll(
+                                ".gallery-filter"
+                            )
+                            .forEach(
+                                function (item) {
+                                    item.classList.remove(
+                                        "active"
+                                    );
+                                }
+                            );
+
+
+                        button.classList.add(
+                            "active"
+                        );
+
+
+                        document
+                            .querySelectorAll(
+                                ".gallery-item"
+                            )
+                            .forEach(
+                                function (item) {
+
+                                    const show =
+                                        filter === "all" ||
+                                        item.dataset
+                                            .category ===
+                                        filter;
+
+                                    item.classList.toggle(
+                                        "hidden",
+                                        !show
+                                    );
+
+                                }
+                            );
+
+                    }
+                );
+
+            });
+
+
+        /* ==========================================
+           Lightbox
+           ========================================== */
+
+        let lightboxTrigger = null;
+        const lightboxModal =
+            document.getElementById(
+                "lightboxModal"
+            );
+
+        const lightboxImage =
+            document.getElementById(
+                "lightboxImage"
+            );
+
+
+        document
+            .querySelectorAll(
+                ".gallery-item img"
+            )
+            .forEach(function (image) {
+
+                image
+                    .parentElement
+                    .addEventListener(
+                        "click",
+                        function () {
+
+                            if (
+                                !lightboxModal ||
+                                !lightboxImage
+                            ) {
+                                return;
+                            }
+
+                            lightboxTrigger = image.parentElement;
+                            lightboxModal.setAttribute("aria-label", image.alt);
+                            lightboxImage.src =
+                                image.src;
+
+                            lightboxImage.style.filter = image.style.filter;
+                            lightboxImage.alt =
+                                image.alt;
+
+                            lightboxModal
+                                .classList
+                                .add("open");
+
+                            document.body
+                                .classList
+                                .add(
+                                    "modal-open"
+                                );
+                            document.getElementById("lightboxClose").focus();
+
+                        }
+                    );
+
+            });
+
+
+        function closeLightbox() {
+
+            if (!lightboxModal || !lightboxModal.classList.contains("open")) {
+                return;
+            }
+            lightboxTrigger?.focus();
+
+            lightboxModal
+                .classList
+                .remove("open");
+
+            document.body
+                .classList
+                .remove("modal-open");
+
+            if (lightboxImage) {
+                lightboxImage.src = "";
+            }
+
+        }
+
+
+        document
+            .getElementById(
+                "lightboxClose"
+            )
+            ?.addEventListener(
+                "click",
+                closeLightbox
+            );
+
+
+        lightboxModal?.addEventListener("keydown", event => {
+            if (event.key === "Tab") {
+                event.preventDefault();
+                document.getElementById("lightboxClose").focus();
+            }
+        });
+
+        lightboxModal?.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target ===
+                    lightboxModal
+                ) {
+                    closeLightbox();
+                }
+
+            }
+        );
+
+
+        /* ==========================================
+           Escape
+           ========================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key !== "Escape") {
+                    return;
+                }
+
+                closeBookingModal();
+                closeLightbox();
+
+            }
+        );
+
+
+        /* ==========================================
+           حركة الظهور
+           ========================================== */
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target
+                                    .classList
+                                    .add(
+                                        "visible"
+                                    );
+
+                                revealObserver
+                                    .unobserve(
+                                        entry.target
+                                    );
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach(function (element) {
+
+                revealObserver.observe(
+                    element
+                );
+
+            });
+
+    </script>
+
+
+
+
+    <script src="media/reviews/reviews.js"></script>
+    <script src="media/hero/hero.js"></script>
+</body>
+
+</html>

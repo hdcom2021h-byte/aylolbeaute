@@ -1,0 +1,339 @@
+<style>
+    .aylol-footer,
+    .aylol-footer * {
+        box-sizing: border-box;
+    }
+
+    .aylol-footer {
+        direction: rtl;
+        font-family: "Tajawal", Tahoma, Arial, sans-serif;
+        background:
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(179, 138, 58, 0.12),
+                transparent 24%
+            ),
+            #4b1425;
+        color: #fff;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    .aylol-footer-top {
+        width: min(1180px, calc(100% - 32px));
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.3fr 1fr 1fr 1fr;
+        gap: 50px;
+        padding: 70px 0 50px;
+    }
+
+    .aylol-footer-brand h2 {
+        margin: 0;
+        font-family: "Tajawal", Tahoma, Arial, sans-serif;
+        color: #d8bd7a;
+        font-size: 31px;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .aylol-footer-brand .footer-ar {
+        color: #fff;
+        margin: 8px 0 20px;
+        font-size: 14px;
+    }
+
+    .aylol-footer-brand p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 14px;
+        line-height: 2;
+        max-width: 330px;
+    }
+
+    .aylol-footer-title {
+        color: #d8bd7a;
+        font-size: 16px;
+        margin: 0 0 20px;
+        font-weight: 700;
+    }
+
+    .aylol-footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    .aylol-footer-links a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        transition: 0.25s ease;
+    }
+
+    .aylol-footer-links a:hover {
+        color: #d8bd7a;
+        transform: translateX(-3px);
+    }
+
+    .aylol-footer-info {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .aylol-footer-social {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .aylol-footer-social a {
+        min-width: 42px;
+        height: 42px;
+        padding: 0 13px;
+        border: 1px solid rgba(216, 189, 122, 0.35);
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 12px;
+        transition: 0.25s ease;
+    }
+
+    .aylol-footer-social a:hover {
+        background: #d8bd7a;
+        color: #4b1425;
+        border-color: #d8bd7a;
+    }
+
+    .aylol-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .aylol-footer-bottom-inner {
+        width: min(1180px, calc(100% - 32px));
+        min-height: 72px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        color: rgba(255, 255, 255, 0.58);
+        font-size: 12px;
+    }
+
+    .aylol-footer-bottom a {
+        color: #d8bd7a;
+        text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+        .aylol-footer-top {
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .aylol-footer-top {
+            grid-template-columns: 1fr;
+            padding-top: 50px;
+        }
+
+        .aylol-footer-bottom-inner {
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            padding: 20px 0;
+        }
+    }
+</style>
+
+<footer class="aylol-footer">
+
+    <div class="aylol-footer-top">
+
+        <div class="aylol-footer-brand">
+
+            <h2>
+                AYLOL BEAUTY
+            </h2>
+
+            <div class="footer-ar">
+                صالون أيلول للتزيين النسائي
+            </div>
+
+            <p>
+                مساحة أنثوية صُممت لتمنحك تجربة جمالية
+                هادئة وراقية، نهتم فيها بأدق التفاصيل
+                لنصنع لكِ إطلالة تليق بك.
+            </p>
+
+            <div class="aylol-footer-social">
+
+                <a
+                    href="https://www.instagram.com/salon.aylol00"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="https://snapchat.com/t/FFC6ZxYg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Snapchat
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/@salon.aylol?_r=1&amp;_t=ZS-981tU3IBrO9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TikTok
+                </a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3 class="aylol-footer-title">
+                روابط سريعة
+            </h3>
+
+            <div class="aylol-footer-links">
+
+                <a href="#home">الرئيسية</a>
+
+                <a href="#services">خدماتنا</a>
+
+                <a href="#prices">قائمة الأسعار</a>
+
+                <a href="#gallery">معرض الأعمال</a>
+
+                <a href="#booking">الحجز</a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3 class="aylol-footer-title">
+                خدماتنا
+            </h3>
+
+            <div class="aylol-footer-links">
+
+                <a href="#makeup">الميكب</a>
+
+                <a href="#hair">الشعر</a>
+
+                <a href="#prices">الأظافر</a>
+
+                <a href="#prices">الرموش</a>
+
+                <a href="#prices">العناية</a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3 class="aylol-footer-title">
+                تواصل معنا
+            </h3>
+
+            <div class="aylol-footer-info">
+
+                <span>
+                    المملكة العربية السعودية
+                </span>
+
+                <span>
+                    أوقات العمل: من 9 صباحًا إلى 10 مساءً
+                </span>
+
+                <span>
+                    الحجز للميكب آرتست والهير ستايل
+                </span>
+
+                <span>
+                    تأكيد الموعد يتم عبر واتساب
+                </span>
+
+            </div>
+
+            <div class="aylol-footer-social">
+
+                <a
+                    href="https://maps.app.goo.gl/JBQuKSfknR59foDh9?g_st=iw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    موقعنا 📍
+                </a>
+
+                <a
+                    href="https://wa.me/966568178738"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    واتساب
+                </a>
+
+                <a href="tel:+966568178738" aria-label="الاتصال بالصالون على الرقم 0568178738">
+                    اتصلي بنا
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="aylol-footer-bottom">
+
+        <div class="aylol-footer-bottom-inner">
+
+            <span>
+                ©
+                <span id="aylolFooterYear"></span>
+                AYLOL BEAUTY — جميع الحقوق محفوظة
+            </span>
+
+            <a href="#booking">
+                سياسة وشروط الحجز
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+(function () {
+
+    const yearElement =
+        document.getElementById("aylolFooterYear");
+
+    if (yearElement) {
+        yearElement.textContent =
+            new Date().getFullYear();
+    }
+
+})();
+</script>

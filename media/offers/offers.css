@@ -1,0 +1,37 @@
+#offers .offers-grid { display: grid; gap: 28px; }
+#offers .seasonal-offer {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    border: 1px solid var(--border); border-radius: 28px; overflow: hidden;
+    background: var(--beige); box-shadow: var(--shadow);
+}
+#offers .seasonal-photo { background: var(--green-dark); display: flex; align-items: center; padding: 20px; }
+#offers .seasonal-photo img { width: 100%; height: auto; object-fit: contain; border-radius: 16px; }
+#offers .seasonal-info { padding: clamp(24px, 4vw, 48px); align-self: center; min-width: 0; }
+#offers .offer-badge { display: inline-block; padding: 8px 16px; border-radius: 999px; background: var(--green-dark); color: var(--cream); font-size: 13px; font-weight: 700; }
+#offers .seasonal-info h3 { color: var(--burgundy-dark); font-size: clamp(25px, 3vw, 36px); line-height: 1.5; margin: 18px 0 12px; }
+#offers .seasonal-intro { color: var(--muted); line-height: 1.9; }
+#offers .offer-until { color: var(--burgundy); font-weight: 700; }
+#offers .national-prices, #nationalOfferDialog .national-prices { margin: 22px 0; }
+#offers .national-prices div, #nationalOfferDialog .national-prices div {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+    padding: 12px 0; border-bottom: 1px solid var(--border); line-height: 1.8;
+}
+#offers .national-prices dd, #nationalOfferDialog .national-prices dd { margin: 0; color: var(--burgundy); font-weight: 700; white-space: nowrap; }
+#offers .national-discount, #nationalOfferDialog .national-discount { background: var(--green-dark); color: var(--cream); padding: 15px 18px; border-radius: 14px; line-height: 1.8; }
+#offers .national-discount strong, #nationalOfferDialog .national-discount strong { color: var(--gold-light); }
+#offers .national-duration, #nationalOfferDialog .national-duration { color: var(--green-dark); line-height: 1.8; }
+#nationalOfferDialog {
+    width: min(1000px, calc(100% - 28px)); max-height: 90vh; max-height: 90dvh;
+    padding: 0; border: 1px solid var(--gold); border-radius: 24px;
+    background: var(--cream); color: var(--text); overflow: auto; overscroll-behavior: contain;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+}
+#nationalOfferDialog::backdrop { background: rgba(35, 23, 27, .78); backdrop-filter: blur(5px); }
+#nationalOfferDialog .national-dialog-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 22px; background: var(--beige); }
+#nationalOfferDialog h3 { margin: 0; color: var(--burgundy-dark); font-size: 22px; }
+#nationalOfferDialog .national-close { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: var(--burgundy); color: white; cursor: pointer; font-size: 27px; }
+#nationalOfferDialog .national-dialog-body { padding: clamp(18px, 4vw, 36px); }
+#nationalOfferDialog .national-poster { width: 100%; max-width: 800px; height: auto; margin: auto; border-radius: 16px; }
+#nationalOfferDialog .national-dialog-details { max-width: 800px; margin: 24px auto 0; }
+#offers button:focus-visible, #nationalOfferDialog button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+@media (max-width: 720px) { #offers .seasonal-offer { grid-template-columns: minmax(0, 1fr); } }

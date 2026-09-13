@@ -1,0 +1,491 @@
+<style>
+    :root {
+        --aylol-burgundy: #6f2137;
+        --aylol-burgundy-dark: #4b1425;
+        --aylol-green: #7c836a;
+        --aylol-green-dark: #59604d;
+        --aylol-gold: #b38a3a;
+        --aylol-gold-light: #d8bd7a;
+        --aylol-cream: #f8f3ea;
+        --aylol-beige: #efe6d8;
+        --aylol-white: #ffffff;
+        --aylol-text: #352d29;
+    }
+
+    .aylol-header,
+    .aylol-header * {
+        box-sizing: border-box;
+    }
+
+    .aylol-header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        direction: rtl;
+        font-family: "Tajawal", Tahoma, Arial, sans-serif;
+        background: rgba(248, 243, 234, 0.96);
+        border-bottom: 1px solid rgba(179, 138, 58, 0.22);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        transition: box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .aylol-header.scrolled {
+        box-shadow: 0 8px 30px rgba(75, 20, 37, 0.08);
+    }
+
+    .aylol-header-container {
+        width: min(1180px, calc(100% - 32px));
+        min-height: 86px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
+    }
+
+    .aylol-logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--aylol-burgundy-dark);
+        text-decoration: none;
+        min-width: max-content;
+    }
+
+    .aylol-logo-image {
+        display: block;
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+        padding: 3px;
+        border-radius: 50%;
+        object-fit: contain;
+        background: #969984;
+        border: 2px solid var(--aylol-gold-light);
+        box-shadow: 0 0 0 3px var(--aylol-cream),
+                    0 4px 12px rgba(75, 20, 37, 0.14);
+    }
+
+    .aylol-logo-text {
+        line-height: 1.1;
+    }
+
+    .aylol-logo-en {
+        display: block;
+        font-family: "Tajawal", Tahoma, Arial, sans-serif;
+        font-size: 20px;
+        letter-spacing: 1.6px;
+        font-weight: 600;
+        color: var(--aylol-gold);
+    }
+
+    .aylol-logo-ar {
+        display: block;
+        margin-top: 5px;
+        font-size: 11px;
+        color: var(--aylol-green-dark);
+        white-space: nowrap;
+    }
+
+    .aylol-reservations-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .aylol-nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .aylol-nav a {
+        position: relative;
+        text-decoration: none;
+        color: var(--aylol-text);
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 0;
+        transition: color 0.25s ease;
+    }
+
+    .aylol-nav a:not(.aylol-booking-btn)::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+        width: 0;
+        height: 1px;
+        background: var(--aylol-gold);
+        transition: width 0.25s ease;
+    }
+
+    .aylol-nav a:not(.aylol-booking-btn):hover {
+        color: var(--aylol-burgundy);
+    }
+
+    .aylol-nav a:not(.aylol-booking-btn):hover::after {
+        width: 100%;
+    }
+
+    .aylol-booking-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 22px !important;
+        border-radius: 999px;
+        background: var(--aylol-burgundy);
+        color: #fff !important;
+        box-shadow: 0 8px 22px rgba(111, 33, 55, 0.18);
+        transition:
+            transform 0.25s ease,
+            background 0.25s ease !important;
+    }
+
+    .aylol-booking-btn:hover {
+        transform: translateY(-2px);
+        background: var(--aylol-burgundy-dark);
+    }
+
+    .aylol-menu-btn {
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(179, 138, 58, 0.35);
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .aylol-menu-btn span {
+        width: 20px;
+        height: 2px;
+        border-radius: 20px;
+        background: var(--aylol-burgundy);
+        transition: 0.3s ease;
+    }
+
+    .aylol-mobile-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(33, 23, 24, 0.35);
+        z-index: 9998;
+        display: none;
+    }
+
+    .aylol-mobile-overlay.open {
+        display: block;
+    }
+
+    .aylol-mobile-nav {
+        position: fixed;
+        top: 0;
+        right: -340px;
+        width: min(320px, 88vw);
+        height: 100vh;
+        z-index: 9999;
+        padding: 30px 24px;
+        background: var(--aylol-cream);
+        border-left: 1px solid rgba(179, 138, 58, 0.22);
+        box-shadow: -15px 0 50px rgba(0, 0, 0, 0.12);
+        transition: right 0.35s ease;
+        overflow-y: auto;
+    }
+
+    .aylol-mobile-nav.open {
+        right: 0;
+    }
+
+    .aylol-mobile-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(179, 138, 58, 0.25);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .aylol-mobile-brand {
+        font-family: "Tajawal", Tahoma, Arial, sans-serif;
+        color: var(--aylol-gold);
+        font-size: 21px;
+        letter-spacing: 1px;
+    }
+
+    .aylol-mobile-close {
+        width: 40px;
+        height: 40px;
+        border: 0;
+        background: var(--aylol-beige);
+        color: var(--aylol-burgundy);
+        border-radius: 50%;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .aylol-mobile-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .aylol-mobile-links a {
+        text-decoration: none;
+        color: var(--aylol-text);
+        padding: 15px;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: background 0.2s ease;
+    }
+
+    .aylol-mobile-links a:hover {
+        background: rgba(179, 138, 58, 0.1);
+    }
+
+    .aylol-mobile-links .mobile-booking {
+        margin-top: 12px;
+        text-align: center;
+        background: var(--aylol-burgundy);
+        color: #fff;
+    }
+
+    @media (max-width: 1080px) {
+        .aylol-nav {
+            display: none;
+        }
+
+        .aylol-menu-btn {
+            display: flex;
+        }
+
+        .aylol-header-container {
+            min-height: 74px;
+        }
+
+        .aylol-logo-image {
+            width: 54px;
+            height: 54px;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .aylol-header-container {
+            width: min(100% - 22px, 1180px);
+        }
+
+        .aylol-logo-en {
+            font-size: 17px;
+        }
+
+        .aylol-logo-ar {
+            font-size: 9px;
+        }
+    }
+</style>
+
+<header class="aylol-header" id="aylolHeader">
+
+    <div class="aylol-header-container">
+
+        <a href="#home" class="aylol-logo" aria-label="العودة إلى الرئيسية">
+
+            <img
+                src="media/logo-gold.png"
+                alt="شعار AYLOL BEAUTY"
+                class="aylol-logo-image"
+                width="64"
+                height="64"
+                decoding="async"
+            >
+
+            <span class="aylol-logo-text">
+                <span class="aylol-logo-en">AYLOL BEAUTY</span>
+                <span class="aylol-logo-ar">
+                    صالون أيلول للتزيين النسائي
+                </span>
+            </span>
+
+        </a>
+
+        <nav class="aylol-nav" aria-label="القائمة الرئيسية">
+
+            <a href="#home">الرئيسية</a>
+
+            <a href="#services">خدماتنا</a>
+
+            <a href="#reservations" class="aylol-reservations-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-14 4h3m4 0h3"/></svg>
+                حجوزات
+            </a>
+
+            <a href="#prices">الأسعار</a>
+
+            <a href="#gallery">معرض الأعمال</a>
+
+            <a href="#offers">العروض</a>
+
+            <a href="#contact">تواصل معنا</a>
+
+            <a href="#booking" class="aylol-booking-btn">
+                احجزي موعدك
+            </a>
+
+        </nav>
+
+        <button
+            class="aylol-menu-btn"
+            id="aylolMenuBtn"
+            type="button"
+            aria-label="فتح القائمة"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+<div
+    class="aylol-mobile-overlay"
+    id="aylolMobileOverlay"
+></div>
+
+<aside
+    class="aylol-mobile-nav"
+    id="aylolMobileNav"
+    aria-label="قائمة الجوال"
+>
+
+    <div class="aylol-mobile-top">
+
+        <span class="aylol-mobile-brand">
+            AYLOL BEAUTY
+        </span>
+
+        <button
+            class="aylol-mobile-close"
+            id="aylolMenuClose"
+            type="button"
+            aria-label="إغلاق القائمة"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <nav class="aylol-mobile-links">
+
+        <a href="#home">الرئيسية</a>
+
+        <a href="#services">خدماتنا</a>
+
+        <a href="#reservations" class="aylol-reservations-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18m-14 4h3m4 0h3"/></svg>
+            حجوزات
+        </a>
+
+        <a href="#prices">الأسعار</a>
+
+        <a href="#gallery">معرض الأعمال</a>
+
+        <a href="#offers">العروض</a>
+
+        <a href="#contact">تواصل معنا</a>
+
+        <a href="#booking" class="mobile-booking">
+            احجزي موعدك
+        </a>
+
+    </nav>
+
+</aside>
+
+<script>
+(function () {
+
+    const menuBtn = document.getElementById("aylolMenuBtn");
+    const menu = document.getElementById("aylolMobileNav");
+    const overlay = document.getElementById("aylolMobileOverlay");
+    const closeBtn = document.getElementById("aylolMenuClose");
+    const header = document.getElementById("aylolHeader");
+
+    function syncHeaderHeight() {
+        if (!header) return;
+        document.documentElement.style.setProperty(
+            "--header-height", header.getBoundingClientRect().height + "px"
+        );
+    }
+
+    syncHeaderHeight();
+    if (header && "ResizeObserver" in window) {
+        new ResizeObserver(syncHeaderHeight).observe(header);
+    } else {
+        window.addEventListener("resize", syncHeaderHeight);
+    }
+
+    function openMenu() {
+        if (!menu || !overlay) return;
+
+        menu.classList.add("open");
+        overlay.classList.add("open");
+
+        if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "true");
+        }
+
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+        if (!menu || !overlay) return;
+
+        menu.classList.remove("open");
+        overlay.classList.remove("open");
+
+        if (menuBtn) {
+            menuBtn.setAttribute("aria-expanded", "false");
+        }
+
+        document.body.style.overflow = "";
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener("click", openMenu);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeMenu);
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", closeMenu);
+    }
+
+    document
+        .querySelectorAll(".aylol-mobile-links a")
+        .forEach(function (link) {
+            link.addEventListener("click", closeMenu);
+        });
+
+    window.addEventListener("scroll", function () {
+        if (!header) return;
+
+        if (window.scrollY > 20) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
+        }
+    });
+
+})();
+</script>
