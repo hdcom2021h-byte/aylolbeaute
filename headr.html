@@ -185,9 +185,11 @@
     }
 
     .aylol-mobile-nav {
+        visibility: hidden;
         position: fixed;
         top: 0;
-        right: -340px;
+        right: 0;
+        transform: translateX(110%);
         width: min(320px, 88vw);
         height: 100vh;
         z-index: 9999;
@@ -195,12 +197,18 @@
         background: var(--aylol-cream);
         border-left: 1px solid rgba(179, 138, 58, 0.22);
         box-shadow: -15px 0 50px rgba(0, 0, 0, 0.12);
-        transition: right 0.35s ease;
+        transition: transform 0.35s ease;
         overflow-y: auto;
     }
 
     .aylol-mobile-nav.open {
+        visibility: visible;
         right: 0;
+        transform: translateX(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .aylol-mobile-nav { transition: none; }
     }
 
     .aylol-mobile-top {
@@ -363,6 +371,7 @@
 <aside
     class="aylol-mobile-nav"
     id="aylolMobileNav"
+    inert
     aria-label="قائمة الجوال"
 >
 
@@ -437,6 +446,7 @@
         if (!menu || !overlay) return;
 
         menu.classList.add("open");
+        menu.inert = false;
         overlay.classList.add("open");
 
         if (menuBtn) {
@@ -444,12 +454,15 @@
         }
 
         document.body.style.overflow = "hidden";
+        closeBtn?.focus();
     }
 
     function closeMenu() {
         if (!menu || !overlay) return;
 
+        if (menu.contains(document.activeElement)) menuBtn?.focus();
         menu.classList.remove("open");
+        menu.inert = true;
         overlay.classList.remove("open");
 
         if (menuBtn) {
@@ -470,6 +483,26 @@
     if (overlay) {
         overlay.addEventListener("click", closeMenu);
     }
+
+    menu?.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            event.stopPropagation();
+            closeMenu();
+            menuBtn?.focus();
+        }
+        if (event.key === "Tab") {
+            const controls = Array.from(menu.querySelectorAll("a, button"));
+            const first = controls[0], last = controls[controls.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault(); last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault(); first.focus();
+            }
+        }
+    });
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 1080 && menu?.classList.contains("open")) closeMenu();
+    });
 
     document
         .querySelectorAll(".aylol-mobile-links a")

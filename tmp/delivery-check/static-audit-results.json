@@ -1,0 +1,62 @@
+{
+  "html": [
+    "index.html",
+    "headr.html",
+    "footer.html"
+  ],
+  "css": [
+    "index.html",
+    "headr.html",
+    "footer.html",
+    "media\\fonts\\cairo.css",
+    "media\\fonts\\tajawal.css",
+    "media\\offers\\offers.css"
+  ],
+  "javascript": [
+    "index.html",
+    "headr.html",
+    "footer.html",
+    "media\\navigation.js",
+    "media\\gallery\\gallery.js",
+    "media\\gallery\\render-gallery.js",
+    "media\\hero\\hero.js",
+    "media\\offers\\offers.js",
+    "media\\reviews\\reviews.js"
+  ],
+  "viewports": [
+    [
+      320,
+      740
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      768,
+      1024
+    ],
+    [
+      820,
+      1180
+    ],
+    [
+      1081,
+      900
+    ],
+    [
+      1440,
+      900
+    ],
+    [
+      1920,
+      1080
+    ]
+  ],
+  "issues": [],
+  "gallery_items": 8,
+  "largest_media_mb": 4.94,
+  "javascript_errors": [],
+  "http_failures": [],
+  "subdirectory_static_test": "passed"
+}

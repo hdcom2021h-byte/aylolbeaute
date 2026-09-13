@@ -47,6 +47,7 @@
         }
 
         html {
+            overflow-x: clip;
             scroll-behavior: smooth;
             scroll-padding-top: calc(var(--header-height, 86px) + 16px);
         }
@@ -1676,7 +1677,7 @@
 
                         <img
                             id="heroFallbackImage"
-                            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
+                            src="media/site/photo-1.jpg"
                             alt="صالون تجميل نسائي"
                             loading="eager"
                         >
@@ -1804,7 +1805,7 @@
                         <div class="service-photo">
 
                             <img
-                                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=700&q=85"
+                                src="media/site/photo-2.jpg"
                                 alt="خدمات الميكب"
                                 loading="lazy"
                             >
@@ -1843,7 +1844,7 @@
                         <div class="service-photo">
 
                             <img
-                                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=85"
+                                src="media/site/photo-3.jpg"
                                 alt="خدمات الشعر"
                                 loading="lazy"
                             >
@@ -2037,7 +2038,7 @@
                     <article class="featured-card reveal">
 
                         <img
-                            src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85"
+                            src="media/site/photo-4.jpg"
                             alt="Makeup Artist"
                             loading="lazy"
                         >
@@ -2069,7 +2070,7 @@
                     <article class="featured-card reveal">
 
                         <img
-                            src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85"
+                            src="media/site/photo-5.jpg"
                             alt="Hair Style"
                             loading="lazy"
                         >
@@ -3804,11 +3805,6 @@
                         <p id="anonymousReviewStatus" role="status"></p>
                     </form>
                     <div class="reviews-cards" id="reviewCards" aria-label="بطاقات الآراء">
-                        <article class="review-card">
-                            <div class="review-stars" role="img" aria-label="5 من 5 نجوم">★★★★★</div>
-                            <blockquote>تعامل راقي جدًا</blockquote>
-                            <p class="review-note">بطاقة نموذجية لعرض التصميم</p>
-                        </article>
                     </div>
                 </div>
             </div>
@@ -3904,7 +3900,6 @@
             </button>
 
             <img
-                src=""
                 alt="صورة من معرض أعمال أيلول"
                 id="lightboxImage"
             >
@@ -3914,6 +3909,7 @@
     </div>
 
 
+    <script src="media/navigation.js"></script>
     <script src="media/gallery/gallery.js"></script>
     <script src="media/gallery/render-gallery.js"></script>
     <script>
@@ -4005,7 +4001,7 @@
                         "
                     >
                         تعذر تحميل ${fileName}.
-                        شغّلي المشروع من Live Server.
+                        تعذّر عرض هذا الجزء. يرجى تحديث الصفحة والمحاولة مجددًا.
                     </div>
                 `;
 
@@ -4024,7 +4020,7 @@
                 "footer-placeholder",
                 "footer.html"
             )
-        ]);
+        ]).then(() => window.dispatchEvent(new Event("aylol:components-ready")));
 
 
         /* ==========================================
@@ -4686,12 +4682,15 @@
             );
 
 
+        let bookingModalTrigger = null;
+
         function openBookingModal() {
 
             if (!bookingModal) {
                 return;
             }
 
+            bookingModalTrigger = document.activeElement;
             bookingModal.classList.add(
                 "open"
             );
@@ -4700,12 +4699,14 @@
                 "modal-open"
             );
 
+            document.getElementById("closeBookingModal")?.focus();
+
         }
 
 
         function closeBookingModal() {
 
-            if (!bookingModal) {
+            if (!bookingModal || !bookingModal.classList.contains("open")) {
                 return;
             }
 
@@ -4717,8 +4718,24 @@
                 "modal-open"
             );
 
+            bookingModalTrigger?.focus();
+
         }
 
+
+        bookingModal?.addEventListener("keydown", function (event) {
+            if (event.key !== "Tab") return;
+            const controls = Array.from(bookingModal.querySelectorAll("button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled])"));
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last?.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first?.focus();
+            }
+        });
 
         document
             .getElementById(
@@ -5076,7 +5093,7 @@
                 .remove("modal-open");
 
             if (lightboxImage) {
-                lightboxImage.src = "";
+                lightboxImage.removeAttribute("src");
             }
 
         }
